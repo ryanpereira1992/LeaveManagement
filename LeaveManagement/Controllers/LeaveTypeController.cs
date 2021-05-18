@@ -2,6 +2,7 @@
 using LeaveManagement.Contracts;
 using LeaveManagement.Data;
 using LeaveManagement.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -11,6 +12,7 @@ using System.Threading.Tasks;
 
 namespace LeaveManagement.Controllers
 {
+    [Authorize(Roles = "Administrator")]
     public class LeaveTypeController : Controller
     {
         private readonly ILeaveTypeRepository _repo;
